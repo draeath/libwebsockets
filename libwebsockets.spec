@@ -1,6 +1,6 @@
 Name:           libwebsockets
 Version:        2.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -33,6 +33,13 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 This package contains the header files needed for developing
 %{name} applications.
 
+%package tests
+Summary:        Tests to use with %{name}
+Requires:       %{name}%{?_isa} = %{version}-%{release}
+
+%description tests
+This package contains the tests for %{name} applications.
+
 %prep
 %setup -q -n %{name}-%{version}
 
@@ -63,18 +70,25 @@ find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
 %files
 %doc README.md changelog
 %license LICENSE
-%{_bindir}/%{name}*
 %{_libdir}/%{name}.so.*
-%{_datadir}/%{name}-test-server/
 
 %files devel
-%doc README.coding.md README.test-apps.md changelog
+%doc README.coding.md changelog
 %license LICENSE
 %{_includedir}/*.h
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
 
+%files tests
+%doc README.coding.md README.test-apps.md
+%license LICENSE
+%{_bindir}/%{name}-test-*
+%{_datadir}/%{name}-test-server/
+
 %changelog
+* Thu Nov 17 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.0-2
+- Move tests (rhbz#1390538)
+
 * Thu Nov 17 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.0-1
 - Update to latest upstream release 2.1.0 (rhbz#1376257)
 
