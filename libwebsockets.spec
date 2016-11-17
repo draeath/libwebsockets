@@ -68,7 +68,7 @@ find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
 %{_datadir}/%{name}-test-server/
 
 %files devel
-%doc README.coding.md README.test-apps.md changelog libwebsockets-api-doc.html
+%doc README.coding.md README.test-apps.md changelog
 %license LICENSE
 %{_includedir}/*.h
 %{_libdir}/%{name}.so
