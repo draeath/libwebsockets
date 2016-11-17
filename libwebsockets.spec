@@ -1,5 +1,5 @@
 Name:           libwebsockets
-Version:        2.0.3
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        A lightweight C library for Websockets
 
@@ -47,11 +47,11 @@ cd build
     -D LWS_WITHOUT_BUILTIN_SHA1=ON \
     -D LWS_WITH_STATIC=OFF \
     ..
-make %{?_smp_mflags}
+%make_build
 
 %install
 cd build
-make install DESTDIR=%{buildroot} INSTALL="install -p"
+%make_install
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 find %{buildroot} -name '*.a' -exec rm -f {} ';'
 find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
@@ -75,6 +75,9 @@ find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Thu Nov 17 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.0-1
+- Update to latest upstream release 2.1.0 (rhbz#1376257)
+
 * Mon Oct 31 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.0.3-1
 - Update to latest upstream release 2.0.3
 
