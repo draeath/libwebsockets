@@ -1,6 +1,6 @@
 Name:           libwebsockets
 Version:        2.1.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        A lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -86,6 +86,9 @@ find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
 %{_datadir}/%{name}-test-server/
 
 %changelog
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.1.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Thu Nov 17 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.0-2
 - Move tests (rhbz#1390538)
 
