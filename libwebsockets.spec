@@ -62,6 +62,7 @@ cd build
 find %{buildroot} -name '*.la' -exec rm -f {} ';'
 find %{buildroot} -name '*.a' -exec rm -f {} ';'
 find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
+find %{buildroot} -name '*_static.pc' -exec rm -f {} ';'
 
 %post -p /sbin/ldconfig
 
