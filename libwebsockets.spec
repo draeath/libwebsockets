@@ -74,14 +74,14 @@ find %{buildroot} -name '*_static.pc' -exec rm -f {} ';'
 %{_libdir}/%{name}.so.*
 
 %files devel
-%doc README.coding.md changelog
+%doc READMEs/README.coding.md READMEs/ changelog
 %license LICENSE
 %{_includedir}/*.h
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
 
 %files tests
-%doc README.coding.md README.test-apps.md
+%doc READMEs/README.coding.md READMEs/README.test-apps.md
 %license LICENSE
 %{_bindir}/%{name}-test-*
 %{_datadir}/%{name}-test-server/
