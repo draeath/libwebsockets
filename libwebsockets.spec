@@ -55,6 +55,8 @@ cd build
     -D LWS_WITH_STATIC=OFF \
     -D LWS_IPV6=ON \
     -D LWS_WITH_HTTP2=ON \
+    -D LWS_OPENSSL_INCLUDE_DIRS=/usr/local/include/openssl \
+    -D LWS_OPENSSL_LIBRARIES="/usr/local/lib64/libssl.so;/usr/local/lib64/libcrypto.so" \
     ..
 %make_build
 
