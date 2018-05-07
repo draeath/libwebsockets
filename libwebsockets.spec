@@ -33,13 +33,6 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 This package contains the header files needed for developing
 %{name} applications.
 
-%package tests
-Summary:        Tests to use with %{name}
-Requires:       %{name}%{?_isa} = %{version}-%{release}
-
-%description tests
-This package contains the tests for %{name} applications.
-
 %prep
 %setup -q -n %{name}-%{version}
 
@@ -55,6 +48,13 @@ cd build
     -D LWS_WITH_STATIC=OFF \
     -D LWS_IPV6=ON \
     -D LWS_WITH_HTTP2=ON \
+    -D LWS_WITHOUT_CLIENT=ON \
+    -D LWS_WITHOUT_SERVER=ON \
+    -D LWS_WITHOUT_TESTAPPS=ON \
+    -D LWS_WITHOUT_TEST_SERVER=ON \
+    -D LWS_WITHOUT_TEST_SERVER_EXTPOLL=ON \
+    -D LWS_WITHOUT_TEST_PING=ON \
+    -D LWS_WITHOUT_TEST_CLIENT=ON \
     -D LWS_OPENSSL_INCLUDE_DIRS=/usr/local/include/openssl \
     -D LWS_OPENSSL_LIBRARIES="/usr/local/lib64/libssl.so;/usr/local/lib64/libcrypto.so" \
     ..
@@ -83,12 +83,6 @@ find %{buildroot} -name '*_static.pc' -exec rm -f {} ';'
 %{_includedir}/*.h
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
-
-%files tests
-%doc READMEs/README.coding.md READMEs/README.test-apps.md
-%license LICENSE
-%{_bindir}/%{name}-test-*
-%{_datadir}/%{name}-test-server/
 
 %changelog
 * Mon May 07 2018 Fabian Affolter <mail@fabian-affolter.ch> - 3.0.0-1
