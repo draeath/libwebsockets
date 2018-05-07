@@ -15,7 +15,7 @@ Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}.tar
 BuildRequires:  cmake
 BuildRequires:  openssl-devel
 BuildRequires:  zlib-devel
-BuildRequires:  libev-devel
+BuildRequires:  libuv-devel
 
 Provides:       bundled(sha1-hollerbach)
 Provides:       bundled(base64-decode)
@@ -48,16 +48,13 @@ mkdir -p build
 cd build
 %cmake \
     -D LWS_LINK_TESTAPPS_DYNAMIC=ON \
-    -D LWS_USE_LIBEV=OFF \
+    -D LWS_WITH_LIBUV=ON \
     -D LWS_WITHOUT_BUILTIN_GETIFADDRS=ON \
     -D LWS_USE_BUNDLED_ZLIB=OFF \
     -D LWS_WITHOUT_BUILTIN_SHA1=ON \
     -D LWS_WITH_STATIC=OFF \
-    -D LWS_WITH_SOCKS5=ON \
     -D LWS_IPV6=ON \
     -D LWS_WITH_HTTP2=ON \
-    -D LWS_OPENSSL_INCLUDE_DIRS=/usr/local/include/openssl \
-    -D LWS_OPENSSL_LIBRARIES="/usr/local/lib64/libssl.so;/usr/local/lib64/libcrypto.so" \
     ..
 %make_build
 
