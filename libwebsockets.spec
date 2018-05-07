@@ -53,7 +53,13 @@ cd build
     -D LWS_USE_BUNDLED_ZLIB=OFF \
     -D LWS_WITHOUT_BUILTIN_SHA1=ON \
     -D LWS_WITH_STATIC=OFF \
+    -D LWS_WITH_SSL=ON \
+    -D LWS_WITH_SOCKS5=ON \
+    -D LWS_IPV6=ON \
     ..
+
+    cmake .. -DLWS_WITH_HTTP2=1 -DLWS_OPENSSL_INCLUDE_DIRS=/usr/local/include/openssl -DLWS_OPENSSL_LIBRARIES="/usr/local/lib64/libssl.so;/usr/local/lib64/libcrypto.so"
+
 %make_build
 
 %install
