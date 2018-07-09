@@ -12,6 +12,7 @@ URL:            http://libwebsockets.org
 Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 
+BuildRequires:  gcc
 BuildRequires:  cmake
 BuildRequires:  openssl-devel
 BuildRequires:  zlib-devel
