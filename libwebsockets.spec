@@ -48,16 +48,14 @@ cd build
     -D LWS_WITHOUT_BUILTIN_SHA1=ON \
     -D LWS_WITH_STATIC=OFF \
     -D LWS_IPV6=ON \
-    -D LWS_WITH_HTTP2=ON \
-    -D LWS_WITHOUT_CLIENT=ON \
-    -D LWS_WITHOUT_SERVER=ON \
+    -D LWS_WITH_HTTP2=OFF \
+    -D LWS_WITHOUT_CLIENT=OFF \
+    -D LWS_WITHOUT_SERVER=OFF \
     -D LWS_WITHOUT_TESTAPPS=ON \
     -D LWS_WITHOUT_TEST_SERVER=ON \
     -D LWS_WITHOUT_TEST_SERVER_EXTPOLL=ON \
     -D LWS_WITHOUT_TEST_PING=ON \
     -D LWS_WITHOUT_TEST_CLIENT=ON \
-    -D LWS_OPENSSL_INCLUDE_DIRS=/usr/local/include/openssl \
-    -D LWS_OPENSSL_LIBRARIES="/usr/local/lib64/libssl.so;/usr/local/lib64/libcrypto.so" \
     ..
 %make_build
 
