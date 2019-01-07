@@ -1,6 +1,6 @@
 Name:           libwebsockets
 Version:        3.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -29,6 +29,7 @@ servers.
 %package devel
 Summary:        Headers for developing programs that will use %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+Requires:       libuv-devel
 
 %description devel
 This package contains the header files needed for developing
@@ -84,6 +85,9 @@ find %{buildroot} -name '*_static.pc' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Mon Jan  7 2019 Peter Robinson <pbrobinson@fedoraproject.org> 3.0.1-2
+- Add libuv-devel Requires to devel package
+
 * Tue Dec 18 2018 Fabian Affolter <mail@fabian-affolter.ch> - 3.0.1-1
 - Update to latest upstream release 3.0.1 (rhbz#1604687)
 
