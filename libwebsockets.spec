@@ -68,9 +68,7 @@ find %{buildroot} -name '*.a' -exec rm -f {} ';'
 find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
 find %{buildroot} -name '*_static.pc' -exec rm -f {} ';'
 
-%post -p /sbin/ldconfig
-
-%postun -p /sbin/ldconfig
+%ldconfig_scriptlets
 
 %files
 %doc README.md changelog
