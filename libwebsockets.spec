@@ -1,6 +1,6 @@
 Name:           libwebsockets
-Version:        3.0.1
-Release:        3%{?dist}
+Version:        3.1.0
+Release:        1%{?dist}
 Summary:        A lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -11,12 +11,13 @@ License:        LGPLv2 and Public Domain and BSD and MIT and zlib
 URL:            http://libwebsockets.org
 Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
-
-BuildRequires:  gcc
 BuildRequires:  cmake
+BuildRequires:  dbus-devel
+BuildRequires:  gcc
+BuildRequires:  libev-devel
+BuildRequires:  libuv-devel
 BuildRequires:  openssl-devel
 BuildRequires:  zlib-devel
-BuildRequires:  libuv-devel
 
 Provides:       bundled(sha1-hollerbach)
 Provides:       bundled(base64-decode)
@@ -36,20 +37,34 @@ This package contains the header files needed for developing
 %{name} applications.
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -p1
 
 %build
 mkdir -p build
 cd build
+
 %cmake \
-    -D LWS_LINK_TESTAPPS_DYNAMIC=ON \
+    -D LWS_WITH_HTTP2=ON \
+    -D LWS_IPV6=ON \
+    -D LWS_WITH_ZIP_FOPS=ON \
+    -D LWS_WITH_SOCKS5=ON \
+    -D LWS_WITH_RANGES=ON \
+    -D LWS_WITH_ACME=ON \
     -D LWS_WITH_LIBUV=ON \
+    -D LWS_WITH_LIBEV=ON \
+    -D LWS_WITH_LIBEVENT=OFF \
+    -D LWS_ROLE_DBUS=ON \
+    -D LWS_WITH_FTS=ON \
+    -D LWS_WITH_THREADPOOL=ON \
+    -D LWS_UNIX_SOCK=ON \
+    -D LWS_WITH_HTTP_PROXY=ON \
+    -D LWS_WITH_DISKCACHE=ON \
+    -D LWS_WITH_LWSAC=ON \
+    -D LWS_LINK_TESTAPPS_DYNAMIC=ON \
     -D LWS_WITHOUT_BUILTIN_GETIFADDRS=ON \
     -D LWS_USE_BUNDLED_ZLIB=OFF \
     -D LWS_WITHOUT_BUILTIN_SHA1=ON \
     -D LWS_WITH_STATIC=OFF \
-    -D LWS_IPV6=ON \
-    -D LWS_WITH_HTTP2=OFF \
     -D LWS_WITHOUT_CLIENT=OFF \
     -D LWS_WITHOUT_SERVER=OFF \
     -D LWS_WITHOUT_TESTAPPS=ON \
@@ -58,31 +73,37 @@ cd build
     -D LWS_WITHOUT_TEST_PING=ON \
     -D LWS_WITHOUT_TEST_CLIENT=ON \
     ..
+
 %make_build
 
 %install
 cd build
 %make_install
-find %{buildroot} -name '*.la' -exec rm -f {} ';'
-find %{buildroot} -name '*.a' -exec rm -f {} ';'
-find %{buildroot} -name '*.cmake' -exec rm -f {} ';'
-find %{buildroot} -name '*_static.pc' -exec rm -f {} ';'
+find %{buildroot} -name '*.la' -delete
+find %{buildroot} -name '*.a' -delete
+find %{buildroot} -name '*.cmake' -delete
+find %{buildroot} -name '*_static.pc' -delete
 
 %ldconfig_scriptlets
 
 %files
-%doc README.md changelog
 %license LICENSE
-%{_libdir}/%{name}.so.*
+%doc README.md changelog
+%{_libdir}/%{name}.so.14
 
 %files devel
-%doc READMEs/README.coding.md READMEs/ changelog
 %license LICENSE
+%doc READMEs/README.coding.md READMEs/ changelog
 %{_includedir}/*.h
+%{_includedir}/%{name}/
 %{_libdir}/%{name}.so
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sat Feb  9 2019 Peter Robinson <pbrobinson@fedoraproject.org> 3.1.0-1
+- Update to 3.1.0
+- Enable new features/functionality
+
 * Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3.0.1-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
