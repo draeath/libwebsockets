@@ -12,7 +12,6 @@ URL:            http://libwebsockets.org
 Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
-BuildRequires:  dbus-devel
 BuildRequires:  gcc
 BuildRequires:  libev-devel
 BuildRequires:  libuv-devel
@@ -53,7 +52,6 @@ cd build
     -D LWS_WITH_LIBUV=ON \
     -D LWS_WITH_LIBEV=ON \
     -D LWS_WITH_LIBEVENT=OFF \
-    -D LWS_ROLE_DBUS=ON \
     -D LWS_WITH_FTS=ON \
     -D LWS_WITH_THREADPOOL=ON \
     -D LWS_UNIX_SOCK=ON \
