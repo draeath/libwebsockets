@@ -89,7 +89,7 @@ find %{buildroot} -name '*_static.pc' -delete
 %files
 %license LICENSE
 %doc README.md changelog
-%{_libdir}/%{name}.so.14
+%{_libdir}/%{name}.so.15
 
 %files devel
 %license LICENSE
