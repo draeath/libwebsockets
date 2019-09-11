@@ -1,0 +1,20 @@
+Author: Sviatoslav Grebenchucov <m1r4gexx@gmail.com>
+Date: Sun Aug 25 20:52:20 2019 +0200
+
+socks: Fix compilation error
+
+
+diff --git a/lib/roles/http/client/client.c b/lib/roles/http/client/client.c
+index 65b7c54..b1e795d 100644
+--- a/lib/roles/http/client/client.c
++++ b/lib/roles/http/client/client.c
+@@ -214,7 +214,7 @@ lws_client_socket_service(struct lws *wsi, struct lws_pollfd *pollfd,
+ 			lwsl_client("SOCKS password OK, sending connect\n");
+ 			if (socks_generate_msg(wsi, SOCKS_MSG_CONNECT, &len)) {
+ socks_send_msg_fail:
+-				*cce = "socks gen msg fail";
++				cce = "socks gen msg fail";
+ 				goto bail3;
+ 			}
+ 			conn_mode = LRS_WAITING_SOCKS_CONNECT_REPLY;
+
