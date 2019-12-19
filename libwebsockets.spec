@@ -10,7 +10,6 @@ Summary:        A lightweight C library for Websockets
 License:        LGPLv2 and Public Domain and BSD and MIT and zlib
 URL:            http://libwebsockets.org
 Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:         sock-fix-build.patch
 
 BuildRequires:  cmake
 BuildRequires:  gcc
