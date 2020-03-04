@@ -9,8 +9,7 @@ Summary:        A lightweight C library for Websockets
 # Test suite is licensed as Public domain (CC-zero)
 License:        LGPLv2 and Public Domain and BSD and MIT and zlib
 URL:            http://libwebsockets.org
-Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
-Patch0:         sock-fix-build.patch
+Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
 BuildRequires:  gcc
@@ -102,6 +101,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %changelog
 * Sat Jan 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 3.2.2-1
 - Update to latest upstream release 3.2.2 (rhbz#1792585)
+
+* Thu Dec 19 2019 Peter Robinson <pbrobinson@fedoraproject.org> 3.2.1-1
+- Update to 3.2.1
 
 * Mon Sep  2 2019 Peter Robinson <pbrobinson@fedoraproject.org> 3.2.0-1
 - Update to 3.2.0
