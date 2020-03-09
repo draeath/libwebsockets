@@ -1,5 +1,5 @@
 Name:           libwebsockets
-Version:        3.2.2
+Version:        4.0.0
 Release:        1%{?dist}
 Summary:        A lightweight C library for Websockets
 
@@ -99,6 +99,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Mon Mar 09 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.0-1
+- Update to latest upstream release 4.0.0 (rhbz#1811270)
+
 * Sat Jan 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 3.2.2-1
 - Update to latest upstream release 3.2.2 (rhbz#1792585)
 
