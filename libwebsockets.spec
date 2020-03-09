@@ -102,6 +102,9 @@ find %{buildroot} -name '*_static.pc' -delete
 * Mon Mar 09 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.0-1
 - Update to latest upstream release 4.0.0 (rhbz#1811270)
 
+* Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 3.2.2-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Sat Jan 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 3.2.2-1
 - Update to latest upstream release 3.2.2 (rhbz#1792585)
 
