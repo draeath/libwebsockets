@@ -1,6 +1,13 @@
+# Absent libuv-devel on s390x at RHEL/CentOS 8
+%if 0%{?rhel} && 0%{?rhel} == 8 && "%{_arch}" == "s390x"
+%bcond_with libuv
+%else
+%bcond_without libuv
+%endif
+
 Name:           libwebsockets
 Version:        4.0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -14,7 +21,9 @@ Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}/%{n
 BuildRequires:  cmake
 BuildRequires:  gcc
 BuildRequires:  libev-devel
+%if %{with libuv}
 BuildRequires:  libuv-devel
+%endif
 BuildRequires:  openssl-devel
 BuildRequires:  zlib-devel
 
@@ -29,7 +38,9 @@ servers.
 %package devel
 Summary:        Headers for developing programs that will use %{name}
 Requires:       %{name}%{?_isa} = %{version}-%{release}
+%if %{with libuv}
 Requires:       libuv-devel
+%endif
 Requires:       libev-devel
 
 %description devel
@@ -50,7 +61,9 @@ cd build
     -D LWS_WITH_SOCKS5=ON \
     -D LWS_WITH_RANGES=ON \
     -D LWS_WITH_ACME=ON \
+%if %{with libuv}
     -D LWS_WITH_LIBUV=ON \
+%endif
     -D LWS_WITH_LIBEV=ON \
     -D LWS_WITH_LIBEVENT=OFF \
     -D LWS_WITH_FTS=ON \
@@ -99,6 +112,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Sat Apr 18 2020 Robert Scheck <robert@fedoraproject.org> - 4.0.1-2
+- Handle absent libuv-devel on s390x architecture at RHEL/CentOS 8
+
 * Tue Mar 10 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.1-1
 - Update to latest upstream release 4.0.1 (rhbz#1811270)
 
