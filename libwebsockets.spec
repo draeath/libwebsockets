@@ -6,8 +6,8 @@
 %endif
 
 Name:           libwebsockets
-Version:        4.0.1
-Release:        2%{?dist}
+Version:        4.0.3
+Release:        1%{?dist}
 Summary:        A lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -112,6 +112,12 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Fri May 01 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.3-1
+- Update to latest upstream release 4.0.2 (rhbz#1829592)
+
+* Thu Apr 30 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.2-1
+- Update to latest upstream release 4.0.2 (rhbz#1829592)
+
 * Sat Apr 18 2020 Robert Scheck <robert@fedoraproject.org> - 4.0.1-2
 - Handle absent libuv-devel on s390x architecture at RHEL/CentOS 8
 
