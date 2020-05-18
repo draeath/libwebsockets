@@ -6,9 +6,9 @@
 %endif
 
 Name:           libwebsockets
-Version:        4.0.3
+Version:        4.0.10
 Release:        1%{?dist}
-Summary:        A lightweight C library for Websockets
+Summary:        Lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
 # sha1-hollerbach is under BSD
@@ -112,6 +112,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Mon May 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.3-1
+- Update to latest upstream release 4.0.10 (rhbz#1829592)
+
 * Fri May 01 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.3-1
 - Update to latest upstream release 4.0.2 (rhbz#1829592)
 
