@@ -86,11 +86,11 @@ cd build
     -D LWS_WITHOUT_TEST_CLIENT=ON \
     ..
 
-%make_build
+%cmake_build
 
 %install
 cd build
-%make_install
+%cmake_install
 find %{buildroot} -name '*.la' -delete
 find %{buildroot} -name '*.a' -delete
 find %{buildroot} -name '*.cmake' -delete
