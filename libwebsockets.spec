@@ -101,14 +101,14 @@ find %{buildroot} -name '*_static.pc' -delete
 %files
 %license LICENSE
 %doc README.md changelog
-%{_libdir}/%{name}.so.16
+%{_libdir}/%{name}.so.17
 
 %files devel
 %license LICENSE
 %doc READMEs/README.coding.md READMEs/ changelog
 %{_includedir}/*.h
 %{_includedir}/%{name}/
-%{_libdir}/%{name}.so
+%{_libdir}/%{name}*.so
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
