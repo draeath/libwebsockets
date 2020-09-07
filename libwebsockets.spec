@@ -128,7 +128,7 @@ find %{buildroot} -name '*_static.pc' -delete
 * Sun Jun 21 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.19-1
 - Update to latest upstream release 4.0.19 (rhbz#1829592)
 
-* Sat Jun 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.16-1
+* Tue Jun 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.16-1
 - Update to latest upstream release 4.0.16 (rhbz#1829592)
 
 * Fri Jun 05 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.15-1
