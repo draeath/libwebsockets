@@ -6,7 +6,7 @@
 %endif
 
 Name:           libwebsockets
-Version:        4.1.2
+Version:        4.1.3
 Release:        1%{?dist}
 Summary:        Lightweight C library for Websockets
 
@@ -112,14 +112,17 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Mon Oct 12 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.3-1
+- Update to latest upstream release 4.1.3 (#1887452)
+
 * Wed Sep 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.2-1
-- Update to latest upstream release 4.1.2 (rhbz#1855481)
+- Update to latest upstream release 4.1.2 (#1855481)
 
 * Wed Sep 23 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.1-1
-- Update to latest upstream release 4.1.1 (rhbz#1855481)
+- Update to latest upstream release 4.1.1 (#1855481)
 
 * Mon Sep 07 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.0-1
-- Update to latest upstream release 4.1.0 (rhbz#1855481)
+- Update to latest upstream release 4.1.0 (#1855481)
 
 * Sat Aug 01 2020 Fedora Release Engineering <releng@fedoraproject.org> - 4.0.20-3
 - Second attempt - Rebuilt for
@@ -129,43 +132,43 @@ find %{buildroot} -name '*_static.pc' -delete
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
 * Wed Jul 15 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.20-1
-- Update to latest upstream release 4.0.20 (rhbz#1855481)
+- Update to latest upstream release 4.0.20 (#1855481)
 
 * Sun Jun 21 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.19-1
-- Update to latest upstream release 4.0.19 (rhbz#1829592)
+- Update to latest upstream release 4.0.19 (#1829592)
 
 * Tue Jun 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.16-1
-- Update to latest upstream release 4.0.16 (rhbz#1829592)
+- Update to latest upstream release 4.0.16 (#1829592)
 
 * Fri Jun 05 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.15-1
-- Update to latest upstream release 4.0.15 (rhbz#1829592)
+- Update to latest upstream release 4.0.15 (#1829592)
 
 * Sun May 24 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.12-1
-- Update to latest upstream release 4.0.12 (rhbz#1829592)
+- Update to latest upstream release 4.0.12 (#1829592)
 
 * Mon May 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.10-1
-- Update to latest upstream release 4.0.10 (rhbz#1829592)
+- Update to latest upstream release 4.0.10 (#1829592)
 
 * Fri May 01 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.3-1
-- Update to latest upstream release 4.0.2 (rhbz#1829592)
+- Update to latest upstream release 4.0.2 (#1829592)
 
 * Thu Apr 30 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.2-1
-- Update to latest upstream release 4.0.2 (rhbz#1829592)
+- Update to latest upstream release 4.0.2 (#1829592)
 
 * Sat Apr 18 2020 Robert Scheck <robert@fedoraproject.org> - 4.0.1-2
 - Handle absent libuv-devel on s390x architecture at RHEL/CentOS 8
 
 * Tue Mar 10 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.1-1
-- Update to latest upstream release 4.0.1 (rhbz#1811270)
+- Update to latest upstream release 4.0.1 (#1811270)
 
 * Mon Mar 09 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.0.0-1
-- Update to latest upstream release 4.0.0 (rhbz#1811270)
+- Update to latest upstream release 4.0.0 (#1811270)
 
 * Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 3.2.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
 * Sat Jan 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 3.2.2-1
-- Update to latest upstream release 3.2.2 (rhbz#1792585)
+- Update to latest upstream release 3.2.2 (#1792585)
 
 * Thu Dec 19 2019 Peter Robinson <pbrobinson@fedoraproject.org> 3.2.1-1
 - Update to 3.2.1
@@ -190,58 +193,58 @@ find %{buildroot} -name '*_static.pc' -delete
 - Add libuv-devel Requires to devel package
 
 * Tue Dec 18 2018 Fabian Affolter <mail@fabian-affolter.ch> - 3.0.1-1
-- Update to latest upstream release 3.0.1 (rhbz#1604687)
+- Update to latest upstream release 3.0.1 (#1604687)
 
 * Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 3.0.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
 * Mon May 07 2018 Fabian Affolter <mail@fabian-affolter.ch> - 3.0.0-1
-- Update to latest upstream release 3.0.0 (rhbz#1575605)
+- Update to latest upstream release 3.0.0 (#1575605)
 
 * Thu Mar 15 2018 Fabian Affolter <mail@fabian-affolter.ch> - 2.4.2-1
-- Update to latest upstream release 2.4.2 (rhbz#1504377)
+- Update to latest upstream release 2.4.2 (#1504377)
 
 * Fri Feb 16 2018 Fabian Affolter <mail@fabian-affolter.ch> - 2.4.1-1
-- Update to latest upstream release 2.4.1 (rhbz#1504377)
+- Update to latest upstream release 2.4.1 (#1504377)
 
 * Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 2.4.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
 * Fri Oct 20 2017 Fabian Affolter <mail@fabian-affolter.ch> - 2.4.0-1
-- Update to latest upstream release 2.4.0 (rhbz#1504377)
+- Update to latest upstream release 2.4.0 (#1504377)
 
 * Thu Aug 03 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.3.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Binutils_Mass_Rebuild
 
 * Sat Jul 29 2017 Fabian Affolter <mail@fabian-affolter.ch> - 2.3.0-1
-- Update to latest upstream release 2.3.0 (rhbz#1472509)
+- Update to latest upstream release 2.3.0 (#1472509)
 
 * Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.2.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
 
 * Thu May 11 2017 Fabian Affolter <mail@fabian-affolter.ch> - 2.2.0-1
-- Update to latest upstream release 2.2.1 (rhbz#1437272)
+- Update to latest upstream release 2.2.1 (#1437272)
 
 * Sat Mar 25 2017 Fabian Affolter <mail@fabian-affolter.ch> - 2.2.0-1
-- Update to latest upstream release 2.2.0 (rhbz#1422477)
+- Update to latest upstream release 2.2.0 (#1422477)
 
 * Tue Mar 14 2017 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.1-1
-- Update to latest upstream release 2.1.1 (rhbz#1422477)
+- Update to latest upstream release 2.1.1 (#1422477)
 
 * Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 2.1.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
 * Thu Nov 17 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.0-2
-- Move tests (rhbz#1390538)
+- Move tests (#1390538)
 
 * Thu Nov 17 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.1.0-1
-- Update to latest upstream release 2.1.0 (rhbz#1376257)
+- Update to latest upstream release 2.1.0 (#1376257)
 
 * Mon Oct 31 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.0.3-1
 - Update to latest upstream release 2.0.3
 
 * Wed Aug 03 2016 Fabian Affolter <mail@fabian-affolter.ch> - 2.0.2-1
-- Update to latest upstream release 2.0.2 (rhbz#1358988)
+- Update to latest upstream release 2.0.2 (#1358988)
 
 * Sat Apr 16 2016 Fabian Affolter <mail@fabian-affolter.ch> - 1.7.5-1
 - Update licenses
