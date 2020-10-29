@@ -6,7 +6,7 @@
 %endif
 
 Name:           libwebsockets
-Version:        4.1.3
+Version:        4.1.4
 Release:        1%{?dist}
 Summary:        Lightweight C library for Websockets
 
@@ -112,6 +112,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Thu Oct 29 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.4-1
+- Update to latest upstream release 4.1.4 (#1887452)
+
 * Mon Oct 12 2020 Fabian Affolter <mail@fabian-affolter.ch> - 4.1.3-1
 - Update to latest upstream release 4.1.3 (#1887452)
 
