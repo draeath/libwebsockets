@@ -6,8 +6,8 @@
 %endif
 
 Name:           libwebsockets
-Version:        4.1.6
-Release:        3%{?dist}
+Version:        4.2.0
+Release:        1%{?dist}
 Summary:        Lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -19,7 +19,7 @@ URL:            http://libwebsockets.org
 Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
-BuildRequires:  gcc
+BuildRequires:  gcc-g++
 BuildRequires:  libev-devel
 %if %{with libuv}
 BuildRequires:  libuv-devel
@@ -84,6 +84,7 @@ cd build
     -D LWS_WITHOUT_TEST_SERVER_EXTPOLL=ON \
     -D LWS_WITHOUT_TEST_PING=ON \
     -D LWS_WITHOUT_TEST_CLIENT=ON \
+    -D LWS_BUILD_HASH=no_hash \
     ..
 
 %cmake_build
@@ -101,7 +102,7 @@ find %{buildroot} -name '*_static.pc' -delete
 %files
 %license LICENSE
 %doc README.md changelog
-%{_libdir}/%{name}.so.17
+%{_libdir}/%{name}.so.18
 
 %files devel
 %license LICENSE
@@ -112,6 +113,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Wed Aug 25 2021 Fabian Affolter <mail@fabian-affolter.ch> - 4.2.0-1
+- Update to latest upstream release 4.2.0 (rhbz#1950346)
+
 * Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 4.1.6-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
