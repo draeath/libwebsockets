@@ -7,7 +7,7 @@
 
 Name:           libwebsockets
 Version:        4.2.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -113,6 +113,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Tue Sep 14 2021 Sahana Prasad <sahana@redhat.com> - 4.2.2-2
+- Rebuilt with OpenSSL 3.0.0
+
 * Wed Sep 01 2021 Fabian Affolter <mail@fabian-affolter.ch> - 4.2.2-1
 - Update to latest upstream release 4.2.2 (closes rhbz#1998770)
 
