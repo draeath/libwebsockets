@@ -7,7 +7,7 @@
 
 Name:           libwebsockets
 Version:        4.2.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -113,6 +113,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 4.2.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
 * Tue Sep 14 2021 Sahana Prasad <sahana@redhat.com> - 4.2.2-2
 - Rebuilt with OpenSSL 3.0.0
 
