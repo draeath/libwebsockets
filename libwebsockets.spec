@@ -7,7 +7,7 @@
 
 Name:           libwebsockets
 Version:        4.3.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Lightweight C library for Websockets
 
 # base64-decode.c and ssl-http2.c is under MIT license with FPC exception.
@@ -19,7 +19,7 @@ URL:            http://libwebsockets.org
 Source0:        https://github.com/warmcat/libwebsockets/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  cmake
-BuildRequires:  gcc-g++
+BuildRequires:  (gcc-g++ or gcc-c++)
 BuildRequires:  libev-devel
 %if %{with libuv}
 BuildRequires:  libuv-devel
@@ -118,6 +118,9 @@ find %{buildroot} -name '*_static.pc' -delete
 %{_libdir}/pkgconfig/%{name}.pc
 
 %changelog
+* Wed Jan 04 2023 Paul Bransford <paul.bransford@epi.usf.edu> - 4.3.2-3
+- Fix builddep for gcc from 'gcc-g++' to 'gcc-c++' to make RHEL8 gcc-toolset-12 happy
+
 * Mon Sep 26 2022 Milivoje Legenovic <m.legenovic@gmail.com> - 4.3.2-2
 - Move two plugin *.so files from devel to libs package
 
